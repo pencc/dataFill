@@ -48,9 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn_random_add_contact = (Button)findViewById(R.id.btn_random_add_contact);
         btn_random_add_contact.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
-
+                Contact.randomAdd(MainActivity.this);
             }
         });
 
