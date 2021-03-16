@@ -31,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn_clear_contact = (Button)findViewById(R.id.btn_clear_contact);
         btn_clear_contact.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
-
+                Contact.clear(MainActivity.this);
             }
         });
 
@@ -55,5 +56,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btn_clear_cr = (Button)findViewById(R.id.btn_clear_cr);
+        btn_clear_cr.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View view) {
+                CallRecord.clear(MainActivity.this);
+            }
+        });
+
+        Button btn_show_cr = (Button)findViewById(R.id.btn_show_cr);
+        btn_show_cr.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View view) {
+                CallRecord.show(MainActivity.this);
+            }
+        });
+
+        Button btn_random_add_cr = (Button)findViewById(R.id.btn_random_add_cr);
+        btn_random_add_cr.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View view) {
+                CallRecord.randomAdd(MainActivity.this, 100); // insert 100 records
+            }
+        });
     }
 }
